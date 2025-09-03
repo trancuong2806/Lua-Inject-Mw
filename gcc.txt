@@ -1,0 +1,4 @@
+gcc -shared -o "C:\Users\gauba\Downloads\luaexec.dll" "C:\Users\gauba\Downloads\luaexec.c" "C:\Users\gauba\Downloads\ui.res" -m32 -Wall -DUNICODE -D_UNICODE -static-libgcc -static-libstdc++
+windres "C:\Users\gauba\Downloads\ui.rc" -O coff -o "C:\Users\gauba\Downloads\ui.res"   
+windres -F pe-i386 "C:\Users\gauba\Downloads\ui.rc" -O coff -o "C:\Users\gauba\Downloads\ui.res" --codepage=65001   
+gcc -shared -o inject.dll inject.c ui.res -Iinclude -Llib -lMinHook -m32 -Wall -DUNICODE -D_UNICODE -static-libgcc -static-libstdc++
